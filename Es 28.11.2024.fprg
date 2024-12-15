@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Es 28.11.2024"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:24:36 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjQ6MjQgQU07MjQ2OQ=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjQ6MzEgQU07MTtsdWtlbl9jaGNjcmUzO0RFU0tUT1AtTkswSzFOMTsyMDI0LTExLTI4OyIxMTozODoyNSAiO0VzIDI4LjExLjIwMjQuZnByZzs3NDE3"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjQ6MzYgQU07MTsyNTgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Media" type="Real" array="False" size=""/>
+            <declare name="Num1, Somma, i" type="Integer" array="False" size=""/>
+            <assign variable="Somma" expression="0"/>
+            <assign variable="media" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <do expression="Num1!=0">
+                <output expression="&quot;Inserire un numero inserire 0 per smettere&quot;" newline="True"/>
+                <input variable="Num1"/>
+                <if expression="Num1=0">
+                    <then/>
+                    <else>
+                        <assign variable="Somma" expression="Somma+Num1"/>
+                        <assign variable="i" expression="i+1"/>
+                    </else>
+                </if>
+            </do>
+            <assign variable="Media" expression="Somma/i"/>
+            <output expression="&quot;la media e' &quot; &amp;media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

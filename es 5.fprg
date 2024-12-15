@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 5"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:23:30 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjI6NTIgQU07MjQ2OA=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6MTcgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTEwLTMxOzAzOjU5OjA0IFBNO2VzIDUuZnByZzs2MDgx"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6MzAgQU07MTsyNTcz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nomeallievo" type="String" array="False" size=""/>
+            <output expression="&quot;inserisci il nome&quot;" newline="True"/>
+            <input variable="nomeallievo"/>
+            <declare name="votofinale, voto1, voto2, voto3, votoorale, crediti" type="Integer" array="False" size=""/>
+            <assign variable="votofinale" expression="0"/>
+            <do expression="voto1&lt;0 || voto1&gt;15">
+                <output expression="&quot;inserisci primo voto&quot;" newline="True"/>
+                <input variable="voto1"/>
+            </do>
+            <do expression="voto2&lt;0 || voto2&gt;15">
+                <output expression="&quot;inserisci secondo voto&quot;" newline="True"/>
+                <input variable="voto2"/>
+            </do>
+            <do expression="voto3&lt;0 || voto3&gt;15">
+                <output expression="&quot;inserisci terzo voto&quot;" newline="True"/>
+                <input variable="voto3"/>
+            </do>
+            <do expression="votoorale&lt;0 || votoorale&gt;30">
+                <output expression="&quot;inserisci  voto orale&quot;" newline="True"/>
+                <input variable="votoorale"/>
+            </do>
+            <do expression="crediti&lt;0 ||crediti&gt;25">
+                <output expression="&quot;inserisci i numeri di crediti&quot;" newline="True"/>
+                <input variable="crediti"/>
+            </do>
+            <declare name="sommavotiorale" type="Integer" array="False" size=""/>
+            <assign variable="sommavotiorale" expression="voto1+voto2+voto3+votoorale"/>
+            <declare name="punteggiobonus" type="Integer" array="False" size=""/>
+            <do expression="punteggiobonus&lt;=1 || punteggiobonus&gt;5">
+                <output expression="&quot;inserisci punteggio bonus&quot;" newline="True"/>
+                <input variable="punteggiobonus"/>
+            </do>
+            <if expression="crediti&gt;=15 and sommavotiorale&gt;=70">
+                <then>
+                    <assign variable="votofinale" expression="voto1+voto2+voto3+votoorale+crediti+punteggiobonus"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="votofinale&lt;60">
+                <then>
+                    <output expression="&quot;non promosso&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;promosso con il punteggio di &quot;&amp;votofinale &amp;&quot; &quot;" newline="False"/>
+                    <if expression="votofinale&gt;100">
+                        <then>
+                            <output expression="&quot;cento con lode&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

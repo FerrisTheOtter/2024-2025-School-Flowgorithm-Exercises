@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es4"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:22:33 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjI6MjYgQU07MjQ2OQ=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjI6MjcgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTEwLTI4OzA0OjAyOjMyIFBNO2VzNC5mcHJnOzYwNDQ="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjI6MzMgQU07MTsyNTc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="km, cilindrata" type="Integer" array="False" size=""/>
+            <declare name="spesa" type="Real" array="False" size=""/>
+            <do expression="cilindrata&lt;=0">
+                <output expression="&quot;inserire un numero cilindrata&quot;" newline="True"/>
+                <input variable="cilindrata"/>
+            </do>
+            <do expression="km&lt;=0">
+                <output expression="&quot;inserire numero km percorsi&quot;" newline="True"/>
+                <input variable="km"/>
+            </do>
+            <if expression="cilindrata&lt;=1200">
+                <then>
+                    <assign variable="spesa" expression="25"/>
+                </then>
+                <else>
+                    <if expression="cilindrata&lt;=2000">
+                        <then>
+                            <assign variable="spesa" expression="50"/>
+                        </then>
+                        <else>
+                            <assign variable="spesa" expression="75"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="spesa" expression="spesa+0.5*km"/>
+            <output expression="&quot;la spesa per il noleggio vale &quot;&amp;spesa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

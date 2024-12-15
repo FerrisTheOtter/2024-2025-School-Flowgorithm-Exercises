@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 1"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:20:25 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6MTEgQU07MjQ2MQ=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6MjEgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTEwLTE1OzA4OjIxOjA3IEFNO2VzIDEuZnByZzs2MDUz"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6MjUgQU07MTsyNTc0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Raggio, Perimetro, Area" type="Integer" array="False" size=""/>
+            <declare name="Greco" type="Real" array="False" size=""/>
+            <assign variable="Greco" expression="3.14"/>
+            <output expression="&quot;Inserire il raggio della circonferenza&quot;" newline="True"/>
+            <input variable="Raggio"/>
+            <while expression="Raggio &lt;= 0">
+                <output expression="&quot;Valore non consentito inserire un altro raggio&quot;" newline="True"/>
+                <input variable="Raggio"/>
+            </while>
+            <assign variable="Perimetro" expression="Raggio * Greco"/>
+            <assign variable="Area" expression="(Raggio * 2) * Greco"/>
+            <output expression="&quot;L'Area e' &quot; &amp;Area" newline="True"/>
+            <output expression="&quot;Il Perimetro e' &quot; &amp;Perimetro" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

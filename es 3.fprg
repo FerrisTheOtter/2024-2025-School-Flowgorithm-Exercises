@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 3"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:22:03 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjE6NDQgQU07MjQ2OA=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjE6NTkgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTEwLTI1OzA0OjA0OjQ1IFBNO2VzIDMuZnByZzs2MDgy"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjI6MDMgQU07MTsyNTcy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, num2, num3" type="Integer" array="False" size=""/>
+            <output expression="&quot;inserire un numero&quot;" newline="True"/>
+            <input variable="num1"/>
+            <output expression="&quot;inserire un numero&quot;" newline="True"/>
+            <input variable="num2"/>
+            <output expression="&quot;inserire un numero&quot;" newline="True"/>
+            <input variable="num3"/>
+            <if expression="num1&gt;=num2 and num1&gt;=num3">
+                <then>
+                    <if expression="num2&gt;=num3">
+                        <then>
+                            <output expression="&quot;il numeri dail pi&#249; piccolo al pi&#249; grande sono&quot; &amp;num1 &amp;num2 &amp;num3" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;il numeri dail pi&#249; piccolo al pi&#249; grande sono&quot;&amp;num1 &amp;num3 &amp;num2" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="num2&gt;=num3 and num2&gt;=num1">
+                        <then>
+                            <if expression="num1&gt;=num3">
+                                <then>
+                                    <output expression="&quot;il numeri dail pi&#249; piccolo al pi&#249; grande sono&quot;&amp;num2 &amp;num1 &amp;num3" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;il numeri dail pi&#249; piccolo al pi&#249; grande sono&quot;&amp;num2 &amp;num3 &amp;num1" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="num3&gt;=num1 and num3&gt;=num2">
+                                <then>
+                                    <if expression="num1&gt;=num2">
+                                        <then>
+                                            <output expression="&quot;i numeri dail pi&#249; piccolo al pi&#249; grande sono&quot;&amp;num3 &amp;num1 &amp;num2" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;il numeri dail pi&#249; piccolo al pi&#249; grande sono&quot;&amp;num3 &amp;num2 &amp;num1" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;errore&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

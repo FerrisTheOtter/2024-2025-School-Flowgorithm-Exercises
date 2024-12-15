@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 7"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:24:18 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6NTAgQU07MjQ2Nw=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjQ6MDkgQU07MTtPc3BpdGU7REVTS1RPUC0yNVRITTAyOzIwMjQtMTEtMTM7IjA0OjIyOjE3ICI7ZXMgNy5mcHJnOzYzMDg="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjQ6MTggQU07MTsyNTgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="v1, v2" type="Integer" array="False" size=""/>
+            <declare name="s1, s2" type="String" array="False" size=""/>
+            <do expression="v1&lt;1 or v1&gt;13">
+                <output expression="&quot;Inserire valore carta 1: 11(J) 12(Q) 13(K) 1(A)&quot;" newline="True"/>
+                <input variable="v1"/>
+            </do>
+            <do expression="s1!=&quot;c&quot; and s1!=&quot;q&quot; and s1!=&quot;f&quot; and s1!=&quot;p&quot;">
+                <output expression="&quot;Inserire seme carta 1: c: CUORI q: QUADRI f:FIORI p: PICCHE&quot;" newline="True"/>
+                <input variable="s1"/>
+            </do>
+            <do expression="v2&lt;1 or v2&gt;13">
+                <output expression="&quot;Inserire valore carta 2: 11(J) 12(Q) 13(K) 1(A)&quot;" newline="True"/>
+                <input variable="v2"/>
+            </do>
+            <do expression="s2!=&quot;c&quot; and s2!=&quot;q&quot; and s2!=&quot;f&quot; and s2!=&quot;p&quot;">
+                <output expression="&quot;Inserire seme carta 2: c: CUORI q: QUADRI f:FIORI p: PICCHE&quot;" newline="True"/>
+                <input variable="s2"/>
+            </do>
+            <declare name="seme1, seme2" type="Integer" array="False" size=""/>
+            <if expression="s1==&quot;c&quot;">
+                <then>
+                    <assign variable="seme1" expression="4"/>
+                </then>
+                <else>
+                    <if expression="s1=&quot;q&quot;">
+                        <then>
+                            <assign variable="seme1" expression="3"/>
+                        </then>
+                        <else>
+                            <if expression="s1=&quot;f&quot;">
+                                <then>
+                                    <assign variable="seme1" expression="2"/>
+                                </then>
+                                <else>
+                                    <assign variable="seme1" expression="1"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="s2==&quot;c&quot;">
+                <then>
+                    <assign variable="seme1" expression="4"/>
+                </then>
+                <else>
+                    <if expression="s2=&quot;q&quot;">
+                        <then>
+                            <assign variable="seme1" expression="3"/>
+                        </then>
+                        <else>
+                            <if expression="s2=&quot;f&quot;">
+                                <then>
+                                    <assign variable="seme1" expression="2"/>
+                                </then>
+                                <else>
+                                    <assign variable="seme1" expression="1"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="seme1&gt;seme2">
+                <then>
+                    <output expression="&quot;carta 1 vincente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="seme1&lt;seme2">
+                        <then>
+                            <output expression="&quot;carta 2 vincente&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="v1&gt;v2">
+                                <then>
+                                    <output expression="&quot;carta 1 vincente&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="v1&lt;v2">
+                                        <then>
+                                            <output expression="&quot;carta 2 vincente&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;carta uguale&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

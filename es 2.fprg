@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 2"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:20:49 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6MzAgQU07MjQ2Mg=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6NDQgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTEwLTE1OzA5OjA4OjE4IEFNO2VzIDIuZnByZzs2MDY3"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjA6NDkgQU07MTsyNTgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Prodotto" type="String" array="False" size=""/>
+            <declare name="Costo, CostoLordo, CostoTot" type="Real" array="False" size=""/>
+            <declare name="Sconto, Quantita, iva" type="Integer" array="False" size=""/>
+            <assign variable="iva" expression="22"/>
+            <output expression="&quot;Inserire Nome Del Prodotto&quot;" newline="True"/>
+            <input variable="Prodotto"/>
+            <output expression="&quot;Inserire il costo del prodotto&quot;" newline="True"/>
+            <input variable="Costo"/>
+            <output expression="&quot;Inserire la percentuale di sconto&quot;" newline="True"/>
+            <input variable="Sconto"/>
+            <output expression="&quot;inserire la quantita di prodotto desiderta&quot;" newline="True"/>
+            <input variable="Quantita"/>
+            <assign variable="CostoLordo" expression="Costo * Quantita"/>
+            <assign variable="CostoTot" expression="(CostoLordo * Sconto) /100"/>
+            <assign variable="CostoLordo" expression="CostoLordo - CostoTot"/>
+            <assign variable="CostoLordo" expression="CostoLordo + ((CostoLordo * iva) /100)"/>
+            <output expression="&quot;il prezzo totale dei prodotti e' &quot; &amp;CostoLordo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

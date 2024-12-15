@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 6"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:23:49 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6MzIgQU07MjQ2Nw=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6NDMgQU07MTtDaHJpcztQQ0NIUklTVElBTjsyMDI0LTExLTEzOzA0OjAyOjQ2IFBNO2VzIDYuZnByZzs2MDc3"/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjM6NDkgQU07MTsyNTgz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lato1, lato2, lato3" type="Integer" array="False" size=""/>
+            <do expression="lato1&lt;0">
+                <output expression="&quot;inserire un numero&quot;" newline="True"/>
+                <input variable="lato1"/>
+            </do>
+            <do expression="lato2&lt;0">
+                <output expression="&quot;inserire un numero &quot;" newline="True"/>
+                <input variable="lato2"/>
+            </do>
+            <do expression="lato3&lt;0">
+                <output expression="&quot;inserire un numero &quot;" newline="True"/>
+                <input variable="lato3"/>
+            </do>
+            <if expression="lato1=lato2 and lato1=lato3">
+                <then>
+                    <output expression="&quot;il triangolo &#232; equilatero&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;il tuo triangolo &#232; isoscele o scaleno&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="21.10.2024"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:19:49 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MTk6MjMgQU07MjQ3Mg=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MTk6MzYgQU07MTtTaXN0ZW1pMDI7REVTS1RPUC1IUlNUUk02OzIwMjQtMTAtMjE7IjA5OjA2OjE5ICI7MjEuMTAuMjAyNC5mcHJnOzY4MDg="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MTk6NDkgQU07MTsyNTg4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="base, lato, perimetro, altezza" type="Integer" array="False" size=""/>
+            <declare name="cateto, area" type="Real" array="False" size=""/>
+            <output expression="&quot;inserire un numero per la base di un triangolo &quot;" newline="True"/>
+            <input variable="base"/>
+            <output expression="&quot;inserire un numero per il lato del trangolo&quot;" newline="True"/>
+            <input variable="lato"/>
+            <assign variable="perimetro" expression="(lato*2) + base"/>
+            <assign variable="cateto" expression="base/2"/>
+            <assign variable="altezza" expression="sqrt (lato*lato - (cateto*cateto))"/>
+            <assign variable="area" expression="(base * altezza) /2"/>
+            <output expression="&quot;il perimetro &#233; &quot;&amp;perimetro" newline="True"/>
+            <output expression="&quot;l'area del triangolo &#233; &quot;&amp;area" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 3 fatto a scuola"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-15 11:21:37 AM"/>
+        <attribute name="created" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjE6MDEgQU07MjQ2MQ=="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjE6MzEgQU07MTtTaXN0ZW1pMDI7REVTS1RPUC1IUlNUUk02OzIwMjQtMTAtMjg7IjA5OjI4OjQ0ICI7ZXMgMyBmYXR0byBhIHNjdW9sYS5mcHJnOzc5OTg="/>
+        <attribute name="edited" value="ZmVycmk7T1RURVJTLVBDOzIwMjQtMTItMTU7MTE6MjE6MzcgQU07MTsyNTc4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, num2, num3" type="Real" array="False" size=""/>
+            <output expression="&quot;inserire il primo numero&quot;" newline="True"/>
+            <input variable="num1"/>
+            <output expression="&quot;inserire il secondo numuro numero&quot;" newline="True"/>
+            <input variable="num2"/>
+            <output expression="&quot;inserireil terzo  numero&quot;" newline="True"/>
+            <input variable="num3"/>
+            <if expression="(num1&gt;num2) and(num1&gt;num3)">
+                <then>
+                    <if expression="num2&gt;num3">
+                        <then>
+                            <output expression="&quot;i numeri sono &quot;&amp;num1 &amp;num2&amp;num3" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;i numeri sono&quot;&amp;num1&amp; &quot;   &quot; &amp;num3&amp;&quot;   &quot; &amp;num2" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+            <if expression="(num2&gt;num3) and(num2&gt;num1)">
+                <then>
+                    <if expression="num2&gt;num3">
+                        <then>
+                            <output expression="&quot;i numeri sono &quot;&amp;num2 &amp;num3&amp;num1" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;i numeri sono&quot;&amp;num2&amp;num1&amp;num3" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+            <if expression="(num3&gt;num2) and(num3&gt;num2)">
+                <then>
+                    <if expression="num3&gt;num2">
+                        <then>
+                            <output expression="&quot;i numeri sono &quot;&amp;num3 &amp;num2&amp;num1" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;i numeri sono&quot;&amp;num3&amp;num1&amp;num2" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
