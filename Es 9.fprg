@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Es 9"/>
+        <attribute name="authors" value="Sistemi04"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-17 08:23:05 AM"/>
+        <attribute name="created" value="U2lzdGVtaTA0O0RFU0tUT1AtUDZBTE5HVDsyMDI0LTEyLTE2OyIwOToyNDoyMCAiOzMxMTU="/>
+        <attribute name="edited" value="U2lzdGVtaTA0O0RFU0tUT1AtUDZBTE5HVDsyMDI0LTEyLTE2OyIwOTo0MjoyOCAiOzE7MzIzMQ=="/>
+        <attribute name="edited" value="ZmVycmk7REVTS1RPUC1OTU9DSzBIOzIwMjQtMTItMTc7MDg6MjM6MDUgQU07MTsyOTg5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Dato un numero N maggiore di 0 e data una soglia non maggiore di N calcolare la media aritmetica di N valori"/>
+            <declare name="Numero, i" type="Integer" array="False" size=""/>
+            <declare name="Soglia, Media, Somma" type="Real" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="Somma" expression="0"/>
+            <do expression="Numero&lt;0">
+                <output expression="&quot;Scrivi un numero maggiore di 0&quot;" newline="True"/>
+                <input variable="Numero"/>
+            </do>
+            <output expression="&quot;Inserire &quot; &amp;Numero" newline="False"/>
+            <output expression="&quot; numeri&quot;" newline="True"/>
+            <while expression="i&lt;=Numero">
+                <output expression="&quot;Inserisci un numero minore o uguale di &quot; &amp;Numero" newline="True"/>
+                <input variable="Soglia"/>
+                <if expression="Soglia&gt;Numero">
+                    <then>
+                        <output expression="&quot;VALORE MAGGIORE DI &quot; &amp;Numero" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="Somma" expression="Somma+Soglia"/>
+                        <assign variable="i" expression="i+1"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="Media" expression="Somma/Numero"/>
+            <output expression="&quot;La media e' &quot; &amp;Media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
