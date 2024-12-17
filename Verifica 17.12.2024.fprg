@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Verifica Luca Piliero"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-17 09:25:27 AM"/>
+        <attribute name="created" value="ZmVycmk7REVTS1RPUC1OTU9DSzBIOzIwMjQtMTItMTc7MDk6MDc6MzEgQU07Mjg4Mw=="/>
+        <attribute name="edited" value="ZmVycmk7REVTS1RPUC1OTU9DSzBIOzIwMjQtMTItMTc7MDk6MjU6MjcgQU07MTsyOTk2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Scelta" type="Integer" array="False" size=""/>
+            <declare name="Costo, km" type="Real" array="False" size=""/>
+            <output expression="&quot;scegliere il codice tariffa 0=Nord, 1=Centro, 2=Sud&quot;" newline="True"/>
+            <input variable="Scelta"/>
+            <if expression="Scelta=0 OR Scelta=1 OR Scelta=2">
+                <then>
+                    <output expression="&quot;Inserire i chilometri percorsi&quot;" newline="True"/>
+                    <input variable="km"/>
+                    <if expression="km&lt;0">
+                        <then>
+                            <output expression="&quot;Errore i Kilometri non possono essere negativi&quot;" newline="True"/>
+                            <breakpoint expression="" always="True"/>
+                        </then>
+                        <else>
+                            <if expression="scelta=0">
+                                <then>
+                                    <if expression="km&gt;100">
+                                        <then>
+                                            <assign variable="Costo" expression="0.150+0.010+0.005"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="Costo" expression="0.150+0.010"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="scelta=1">
+                                        <then>
+                                            <if expression="km&gt;100">
+                                                <then>
+                                                    <assign variable="Costo" expression="0.125+0.010+0.005"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="Costo" expression="0.125+0.010"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <if expression="km&gt;100">
+                                                <then>
+                                                    <assign variable="Costo" expression="0.100+0.010+0.005"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="Costo" expression="0.100+0.010"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Errore scelta non permessa&quot;" newline="True"/>
+                    <breakpoint expression="" always="True"/>
+                </else>
+            </if>
+            <output expression="&quot;Il costo del pedaggio e' &quot; &amp;Costo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
