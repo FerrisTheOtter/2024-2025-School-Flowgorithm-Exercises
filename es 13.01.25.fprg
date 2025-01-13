@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi15"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-13 09:39:39 "/>
+        <attribute name="created" value="U2lzdGVtaTE1O0RFU0tUT1AtSjlRQzVGOTsyMDI1LTAxLTEzOyIwODo1OTo0MCAiOzMwNzM="/>
+        <attribute name="edited" value="U2lzdGVtaTE1O0RFU0tUT1AtSjlRQzVGOTsyMDI1LTAxLTEzOyIwOTozOTozOSAiOzE7MzE4OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="date in input n coppie di numeri interi contare e visualizzare delle il cui secondo numero &#232; opposto al primo"/>
+            <declare name="ncoppie, i, n2, n1" type="Integer" array="False" size=""/>
+            <output expression="&quot;inserire il numero delle coppie&quot;" newline="True"/>
+            <input variable="ncoppie"/>
+            <assign variable="i" expression="0"/>
+            <if expression="ncoppie&gt;0">
+                <then>
+                    <while expression="i&lt;ncoppie">
+                        <output expression="&quot;Inserire n1&quot;" newline="True"/>
+                        <input variable="n1"/>
+                        <output expression="&quot;Inserire n2&quot;" newline="True"/>
+                        <input variable="n2"/>
+                        <if expression="n2=-n1">
+                            <then>
+                                <output expression="n1 &amp; &quot; e &quot; &amp;n2 &amp;  &quot; sono nummeri opposti&quot;" newline="True"/>
+                                <assign variable="i" expression="i+1"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </while>
+                    <output expression="&quot;il numero di coppie con nummeri opposti sono &quot; &amp;i" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;ERRORE IL NUMERO DI COPPIE NON PUO' ESSERE NEGATIVO&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
