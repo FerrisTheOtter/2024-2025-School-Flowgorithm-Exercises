@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 16.01.25"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-14 09:11:48 "/>
+        <attribute name="created" value="ZmVycmk7UElDQ09MTy1HT0xGTy1EOzIwMjUtMDEtMTQ7IjA4OjQyOjU0ICI7Mjc4Mw=="/>
+        <attribute name="edited" value="ZmVycmk7UElDQ09MTy1HT0xGTy1EOzIwMjUtMDEtMTQ7IjA5OjExOjQ4ICI7MjsyODky"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="un onda anomala oceanica dimezza la propri&#224; altezza dopo ogni 3km percorsi. Al di sotto di un metro l'onda perde la sua potenza e non viene pi&#249; considerata pericolosa. Scrivere un programma dati in input L'Altezza iniziale dell'onda, calcoli quanta distanza deve percorrere affinche perda la sua potenza iniziale"/>
+            <declare name="h, distanza" type="Real" array="False" size=""/>
+            <assign variable="distanza" expression="0"/>
+            <output expression="&quot;inserire l'altezza iniziale dell'onda&quot;" newline="True"/>
+            <input variable="h"/>
+            <if expression="h&lt;1">
+                <then>
+                    <output expression="&quot;l'onda e' gia' considerata non pericolosa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <while expression="h&gt;1">
+                        <assign variable="h" expression="h/2"/>
+                        <assign variable="distanza" expression="distanza+3"/>
+                    </while>
+                    <output expression="&quot;l'onda e' diventata non pericolosa dopo &quot; &amp;distanza" newline="False"/>
+                    <output expression="&quot; km&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

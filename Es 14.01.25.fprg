@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Es 14.01.25"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-14 08:42:50 "/>
+        <attribute name="created" value="ZmVycmk7UElDQ09MTy1HT0xGTy1EOzIwMjUtMDEtMTQ7IjA4OjE3OjU1ICI7Mjc4Ng=="/>
+        <attribute name="edited" value="ZmVycmk7UElDQ09MTy1HT0xGTy1EOzIwMjUtMDEtMTQ7IjA4OjQyOjUwICI7MjsyODg4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text=""/>
+            <declare name="N, i" type="Integer" array="False" size=""/>
+            <declare name="Somma, Pref, Media, Num1, Num2, Num3, diff" type="Real" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <output expression="&quot;Inserire il numero delle terne&quot;" newline="True"/>
+            <input variable="N"/>
+            <while expression="N&lt;=0">
+                <output expression="&quot;Errore il numero di terne non pu&#242; essere negativo inserire un altro numero&quot;" newline="True"/>
+                <input variable="N"/>
+            </while>
+            <output expression="&quot;Inserire il numero preffisato&quot;" newline="True"/>
+            <input variable="Pref"/>
+            <for variable="i" start="1" end="N" direction="inc" step="1">
+                <output expression="&quot;inseire il primo numero della terna&quot;" newline="True"/>
+                <input variable="Num1"/>
+                <output expression="&quot;inseire il secondo numero della terna&quot;" newline="True"/>
+                <input variable="Num2"/>
+                <output expression="&quot;inseire il terzo numero della terna&quot;" newline="True"/>
+                <input variable="Num3"/>
+                <assign variable="Somma" expression="N1+N2+N3"/>
+                <assign variable="media" expression="somma/3"/>
+                <assign variable="diff" expression="media - pref"/>
+                <output expression="&quot;la differenza del numero prefissato e' di &quot; &amp;diff" newline="True"/>
+                <output expression="&quot;la media e' &quot; &amp;media" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
