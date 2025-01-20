@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi04"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-20 09:24:57 "/>
+        <attribute name="created" value="U2lzdGVtaTA0O0RFU0tUT1AtUDZBTE5HVDsyMDI1LTAxLTIwOyIwOTowMTozNyAiOzMxMTI="/>
+        <attribute name="edited" value="U2lzdGVtaTA0O0RFU0tUT1AtUDZBTE5HVDsyMDI1LTAxLTIwOyIwOToyNDo1NyAiOzE7MzIyNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, num1, nump, Soglia, somma" type="Integer" array="False" size=""/>
+            <declare name="media" type="Real" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="somma" expression="0"/>
+            <assign variable="nump" expression="0"/>
+            <output expression="&quot;Inserire una soglia&quot;" newline="True"/>
+            <input variable="soglia"/>
+            <while expression="Soglia&lt;0">
+                <output expression="&quot;La soglia non pu&#242; essere negativa&quot;" newline="True"/>
+                <input variable="soglia"/>
+            </while>
+            <while expression="nump&lt;=5">
+                <output expression="&quot;Inserire Numeri interi positivi&quot;" newline="True"/>
+                <input variable="num1"/>
+                <while expression="num1&lt;0">
+                    <output expression="&quot;Errore Numero negativo inserire un altro numero&quot;" newline="True"/>
+                    <input variable="num1"/>
+                </while>
+                <if expression="num1%2=0">
+                    <then>
+                        <assign variable="nump" expression="nump+1"/>
+                    </then>
+                    <else>
+                        <if expression="num1&gt;Soglia">
+                            <then>
+                                <assign variable="i" expression="i+1"/>
+                                <assign variable="somma" expression="somma+num1"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <assign variable="media" expression="somma/i"/>
+            <output expression="&quot;La media dei numeri dispari che superano la soglia e' &quot; &amp;media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
