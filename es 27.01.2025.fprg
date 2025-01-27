@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi03"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-27 09:37:18 "/>
+        <attribute name="created" value="U2lzdGVtaTAzO0RFU0tUT1AtOVQyTjhGRzsyMDI1LTAxLTI3OyIwOToxMDo1MiAiOzMwNzM="/>
+        <attribute name="edited" value="U2lzdGVtaTAzO0RFU0tUT1AtOVQyTjhGRzsyMDI1LTAxLTI3OyIwOTozNzoxOCAiOzI7MzE5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, contp, sommadisp, sommap, media, K" type="Integer" array="False" size=""/>
+            <assign variable="K" expression="0"/>
+            <assign variable="num1" expression="0"/>
+            <assign variable="contp" expression="0"/>
+            <assign variable="media" expression="0"/>
+            <assign variable="sommap" expression="0"/>
+            <assign variable="sommadisp" expression="0"/>
+            <output expression="&quot;Inserire un valore K&quot;" newline="True"/>
+            <input variable="K"/>
+            <while expression="K&lt;=0">
+                <output expression="&quot;ERRORE SU VALORE K, Inserire un altro valore K positivo intero&quot;" newline="True"/>
+                <input variable="K"/>
+            </while>
+            <do expression="Sommadisp&lt;=100">
+                <if expression="num1&gt;=0">
+                    <then>
+                        <output expression="&quot;inserire un numero&quot;" newline="True"/>
+                        <input variable="num1"/>
+                        <if expression="num1%2!=0">
+                            <then>
+                                <assign variable="sommadisp" expression="sommadisp+num1"/>
+                            </then>
+                            <else>
+                                <if expression="num1%K=0">
+                                    <then>
+                                        <assign variable="sommap" expression="sommap+num1"/>
+                                        <assign variable="contp" expression="contp+1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;Numero negativo non accetato, inserire un numero positivo intero&quot;" newline="True"/>
+                    </else>
+                </if>
+            </do>
+            <if expression="contp==0">
+                <then>
+                    <output expression="&quot;non sono stati inseriti numeri pari&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="media" expression="sommap/contp"/>
+                    <output expression="&quot;la media dei pari che sono multipli di &quot; &amp;K" newline="False"/>
+                    <output expression="&quot; e' &quot; &amp;media" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
