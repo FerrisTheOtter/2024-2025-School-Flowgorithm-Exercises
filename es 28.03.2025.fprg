@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="AA"/>
+        <attribute name="authors" value="ferri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-27 11:23:49 "/>
+        <attribute name="created" value="ZmVycmk7REVTS1RPUC1BRUNTMzRTOzIwMjUtMDMtMjc7IjEwOjQ4OjI0ICI7Mjc4NA=="/>
+        <attribute name="edited" value="ZmVycmk7REVTS1RPUC1BRUNTMzRTOzIwMjUtMDMtMjc7IjExOjIzOjQ5ICI7MTsyODkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, M, G, Risposta" type="String" array="False" size=""/>
+            <assign variable="Risposta" expression="&quot;Si&quot;"/>
+            <do expression="Risposta == Si">
+                <declare name="Giorno, Anno, Mese" type="Integer" array="False" size=""/>
+                <assign variable="A" expression="&quot;A&quot;"/>
+                <assign variable="M" expression="&quot;M&quot;"/>
+                <assign variable="Anno" expression="ControlloInput(A)"/>
+                <assign variable="Mese" expression="ControlloInput(M)"/>
+                <assign variable="Giorno" expression="ControlloInput(&quot;G&quot;)"/>
+                <if expression="Mese=2 AND Giorno&gt;28">
+                    <then>
+                        <if expression="Anno%400==0">
+                            <then>
+                                <if expression="Giorno &gt; 29">
+                                    <then>
+                                        <output expression="&quot;Data non valida!!!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Data valida!!!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="anno%4==0 &amp;&amp; !(anno%100==0)">
+                                    <then>
+                                        <output expression="&quot;Data valida!!!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Data non valida!!!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="Mese == 4 OR mese == 6 OR mese == 9 OR mese == 11">
+                            <then>
+                                <if expression="giorno ==31">
+                                    <then>
+                                        <output expression="&quot;Data non valida!!!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Data valida!!!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="Mese == 1 OR Mese == 3 OR Mese == 5 OR Mese == 7 OR Mese == 8 OR Mese ==10 OR Mese == 12">
+                                    <then>
+                                        <output expression="&quot;Data valida!!!&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Vuoi controllare un altra data? Si o No?&quot;" newline="True"/>
+                <input variable="Risposta"/>
+            </do>
+        </body>
+    </function>
+    <function name="ControlloInput" type="Integer" variable="Numero">
+        <parameters>
+            <parameter name="Valore" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Numero" type="Integer" array="False" size=""/>
+            <if expression="Valore==&quot;A&quot;">
+                <then>
+                    <do expression="Numero&lt;0">
+                        <output expression="&quot;Inserire l'anno&quot;" newline="True"/>
+                        <input variable="Numero"/>
+                    </do>
+                </then>
+                <else>
+                    <if expression="Valore==&quot;M&quot;">
+                        <then>
+                            <do expression="Numero&lt;1 OR Numero&gt;12">
+                                <output expression="&quot;Inserire il mese&quot;" newline="True"/>
+                                <input variable="Numero"/>
+                            </do>
+                        </then>
+                        <else>
+                            <do expression="Numero&lt;1 OR Numero&gt;31">
+                                <output expression="&quot;Inserire il giorno&quot;" newline="True"/>
+                                <input variable="Numero"/>
+                            </do>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
