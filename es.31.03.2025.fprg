@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi14"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-31 09:42:20 "/>
+        <attribute name="created" value="U2lzdGVtaTE0O0RFU0tUT1AtTDkyTTAyUTsyMDI1LTAzLTMxOyIwOTowODoyMyAiOzMwNTA="/>
+        <attribute name="edited" value="U2lzdGVtaTE0O0RFU0tUT1AtTDkyTTAyUTsyMDI1LTAzLTMxOyIwOTo0MjoyMCAiOzE7MzE1Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="orario1, orario2, diff" type="Integer" array="False" size=""/>
+            <assign variable="orario1" expression="tempo()"/>
+            <output expression="&quot;il primo orario in secondi e' &quot; &amp;orario1" newline="True"/>
+            <assign variable="orario2" expression="tempo()"/>
+            <output expression="&quot;il primo orario in secondi e' &quot; &amp;orario1" newline="True"/>
+            <if expression="orario1==orario2">
+                <then>
+                    <output expression="&quot;gli orari sono uguali&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="orario1&gt;orario2">
+                <then>
+                    <assign variable="diff" expression="orario1-orario2"/>
+                    <output expression="&quot;il primo orario e' maggiore con una differenza di&quot; &amp;diff" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="diff" expression="orario2-orario1"/>
+                    <output expression="&quot;il secondo orario e' maggiore con una differenza di&quot; &amp;diff" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="tempo" type="Integer" variable="esito">
+        <parameters/>
+        <body>
+            <declare name="esito, ore, minuti, secondi, HtM" type="Integer" array="False" size=""/>
+            <do expression="ore&lt;0 OR ore&gt;24">
+                <output expression="&quot;inserire le ore&quot;" newline="True"/>
+                <input variable="ore"/>
+            </do>
+            <do expression="minuti&lt;0 OR minuti&gt;60">
+                <output expression="&quot;inserire i minuti&quot;" newline="True"/>
+                <input variable="minuti"/>
+            </do>
+            <do expression="secondi&lt;0 OR secondi&gt;60">
+                <output expression="&quot;inserire i secondii&quot;" newline="True"/>
+                <input variable="secondi"/>
+            </do>
+            <assign variable="htm" expression="ore*60"/>
+            <assign variable="minuti" expression="minuti+htm"/>
+            <assign variable="esito" expression="(minuti*60)+secondi"/>
+        </body>
+    </function>
+</flowgorithm>
