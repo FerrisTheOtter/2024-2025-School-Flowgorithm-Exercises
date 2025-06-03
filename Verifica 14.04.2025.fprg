@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi01"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-14 09:49:06 "/>
+        <attribute name="created" value="U2lzdGVtaTAxO0RFU0tUT1AtMEw4TEtWTjsyMDI1LTA0LTE0OyIwODo1MzozMiAiOzMxMDM="/>
+        <attribute name="edited" value="U2lzdGVtaTAxO0RFU0tUT1AtMEw4TEtWTjsyMDI1LTA0LTE0OyIwOTo0OTowNiAiOzE7MzIxOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="scelta" type="String" array="False" size=""/>
+            <declare name="i, operazioni, prelievo, importo, contoiniziale, contofinale, i2, i3" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="i2" expression="0"/>
+            <assign variable="i3" expression="0"/>
+            <output expression="&quot;Inserire il saldo del conto corrente&quot;" newline="True"/>
+            <input variable="ContoIniziale"/>
+            <while expression="ContoIniziale&lt;0 OR ContoIniziale&gt;1000">
+                <if expression="ContoIniziale&lt;0">
+                    <then>
+                        <output expression="&quot;ERRORE il saldo non pu&#242; essere negativo&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;ERRORE il saldo non pu&#242; essere superiore ai 1000&#8364;&quot;" newline="True"/>
+                    </else>
+                </if>
+                <output expression="&quot;reinserire il saldo iniziale&quot;" newline="True"/>
+                <input variable="ContoIniziale"/>
+            </while>
+            <output expression="&quot;quante operazioni si vuole eseguire?&quot;" newline="True"/>
+            <input variable="operazioni"/>
+            <while expression="operazioni&lt;0">
+                <output expression="&quot;ERRORE le operazioni non possono essere negative, reinserire il valore&quot;" newline="True"/>
+                <input variable="operazioni"/>
+            </while>
+            <while expression="i&lt;operazioni">
+                <output expression="&quot;Che operazione si vuole eseguire? Inserirre A per aggiunte oppure P per prelievi&quot;" newline="True"/>
+                <input variable="scelta"/>
+                <if expression="scelta== &quot;A&quot; or scelta== &quot;a&quot;">
+                    <then>
+                        <output expression="&quot;insirire di quanto sar&#224; l'importo aggiunto?&quot;" newline="True"/>
+                        <input variable="importo"/>
+                        <while expression="importo&lt;0">
+                            <output expression="&quot;ERRORE l'importo aggiunto non pu&#242; essere negativo, reinserire il valore&quot;" newline="True"/>
+                            <input variable="importo"/>
+                        </while>
+                        <if expression="i&gt;0">
+                            <then>
+                                <assign variable="contofinale" expression="contofinale+importo"/>
+                            </then>
+                            <else>
+                                <assign variable="contofinale" expression="contoiniziale+importo"/>
+                            </else>
+                        </if>
+                        <if expression="contofinale&gt;5000">
+                            <then>
+                                <output expression="&quot;il conto corrente ha superato i 5000&#8364;&quot;" newline="True"/>
+                                <assign variable="i2" expression="i2+1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="i" expression="i+1"/>
+                    </then>
+                    <else>
+                        <if expression="scelta== &quot;P&quot; OR scelta== &quot;p&quot;">
+                            <then>
+                                <output expression="&quot;inserire di quanto si vuole prelevare dal conto&quot;" newline="True"/>
+                                <input variable="prelievo"/>
+                                <while expression="prelievo&lt;0">
+                                    <output expression="&quot;ERRORE il valore richiesto del prelievo non pu&#242; essere negativo, reinserire il valore&quot;" newline="True"/>
+                                    <input variable="prelievo"/>
+                                </while>
+                                <if expression="i&gt;0">
+                                    <then>
+                                        <assign variable="contofinale" expression="contofinale-prelievo"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="contofinale" expression="contoiniziale-prelievo"/>
+                                    </else>
+                                </if>
+                                <if expression="contofinale&lt;0">
+                                    <then>
+                                        <output expression="&quot;il conto corrente e' andato in negativo&quot;" newline="True"/>
+                                        <assign variable="i3" expression="i3+1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                                <assign variable="i" expression="i+1"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;ERRORE operazione non riconoscuta&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;il conto corrente ha superato i 5000&#8364; &quot; &amp;i2" newline="False"/>
+            <output expression="&quot; volte&quot;" newline="True"/>
+            <output expression="&quot;il conto corrente e' andato in negativo &quot; &amp;i3" newline="False"/>
+            <output expression="&quot; volte&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

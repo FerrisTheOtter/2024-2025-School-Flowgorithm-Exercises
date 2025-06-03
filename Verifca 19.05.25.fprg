@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Sistemi05"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-05-19 09:49:31 "/>
+        <attribute name="created" value="U2lzdGVtaTA1O0RFU0tUT1AtUjFERTQxTjsyMDI1LTA1LTE5OyIwODo1OTo1MSAiOzMwNzI="/>
+        <attribute name="edited" value="U2lzdGVtaTA1O0RFU0tUT1AtUjFERTQxTjsyMDI1LTA1LTE5OyIwOTo0OTozMSAiOzE7MzE3OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Panini, Bibite, Gruppi, i" type="Integer" array="False" size=""/>
+            <declare name="costopanino, costobibita, tot, guadagnitotali" type="Real" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="guadagnitotali" expression="0"/>
+            <output expression="&quot;Inserire quanti gruppi acquisteranno dalla paninoteca&quot;" newline="True"/>
+            <input variable="Gruppi"/>
+            <while expression="gruppi&lt;0">
+                <output expression="&quot;Il numero di gruppi non pu&#242; essere negativo&quot;" newline="True"/>
+                <input variable="Gruppi"/>
+            </while>
+            <if expression="gruppi==0">
+                <then>
+                    <output expression="&quot;la paninoteca ha guandagnato 0 euro poich&#232; non c'era alcun cliente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;inserire il costo del panino&quot;" newline="True"/>
+                    <input variable="costopanino"/>
+                    <while expression="costopanino&lt;0">
+                        <output expression="&quot;il costo del panino non pu&#242; essere negativo&quot;" newline="True"/>
+                        <input variable="costopanino"/>
+                    </while>
+                    <output expression="&quot;inserire il costo della bibita&quot;" newline="True"/>
+                    <input variable="costobibita"/>
+                    <while expression="costobibita&lt;0">
+                        <output expression="&quot;il costo della bibita non pu&#242; essere negativo&quot;" newline="True"/>
+                        <input variable="costobibita"/>
+                    </while>
+                    <while expression="i&lt;gruppi">
+                        <output expression="&quot;Quanti panini sono stati venduti al gruppo?&quot;" newline="True"/>
+                        <input variable="panini"/>
+                        <while expression="panini&lt;0">
+                            <output expression="&quot;il numero di panini venduti non pu&#242; essere negativo&quot;" newline="True"/>
+                            <input variable="panini"/>
+                        </while>
+                        <output expression="&quot;Quante bibite sono state vendute al gruppo?&quot;" newline="True"/>
+                        <input variable="bibite"/>
+                        <while expression="bibite&lt;0">
+                            <output expression="&quot;il numero di bibite vendute non pu&#242; essere negativo&quot;" newline="True"/>
+                            <input variable="bibite"/>
+                        </while>
+                        <assign variable="tot" expression="Panini(panini,bibite,costopanino,costobibita)"/>
+                        <assign variable="guadagnitotali" expression="guadagnitotali+tot"/>
+                        <assign variable="i" expression="i+1"/>
+                    </while>
+                    <output expression="&quot;i guadagni totati della paninoteca sono: &quot; &amp;guadagnitotali" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Panini" type="Real" variable="totale">
+        <parameters>
+            <parameter name="Panini" type="Integer" array="False"/>
+            <parameter name="bibite" type="Integer" array="False"/>
+            <parameter name="costopanino" type="Real" array="False"/>
+            <parameter name="costobibita" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="totale, i, offerta, differenza" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="differenza" expression="0"/>
+            <if expression="panini==bibite">
+                <then>
+                    <assign variable="totale" expression="(costopanino*panini)+((costobibita/2)*bibite)"/>
+                </then>
+                <else>
+                    <if expression="panini&gt;bibite">
+                        <then>
+                            <assign variable="differenza" expression="panini-bibite"/>
+                            <while expression="i&lt;(panini-differenza)">
+                                <assign variable="offerta" expression="(costopanino*(panini-differenza))+((costobibita/2)*1)"/>
+                                <assign variable="i" expression="i+1"/>
+                            </while>
+                            <assign variable="totale" expression="offerta+(costobibita*differenza)"/>
+                        </then>
+                        <else>
+                            <assign variable="differenza" expression="bibite-panini"/>
+                            <while expression="i&lt;(bibite-differenza)">
+                                <assign variable="offerta" expression="(costopanino*panini)+((costobibita/2)*(bibite-differenza))"/>
+                                <assign variable="i" expression="i+1"/>
+                            </while>
+                            <assign variable="totale" expression="offerta+(costopanino*differenza)"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
